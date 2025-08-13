@@ -1,16 +1,15 @@
-import React from 'react'
-import {
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-} from '@clerk/nextjs'
-import Image from "next/image";
-import Link from "next/link";
+import React from "react";
 import { Button } from "./ui/button";
 import { PenBox, LayoutDashboard } from "lucide-react";
+import Link from "next/link";
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+import { checkUser } from "@/lib/checkUser";
+import Image from "next/image";
+// import Header from "@/components/ui/header";
 
-const Header = () => {
+const Header = async () => {
+  await checkUser();
+
   return (
     <header className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b">
       <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -75,7 +74,7 @@ const Header = () => {
         </div>
       </nav>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
