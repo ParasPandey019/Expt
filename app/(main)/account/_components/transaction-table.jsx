@@ -281,13 +281,13 @@ export function TransactionTable({ transactions }) {
           <TableHeader>
             <TableRow>
               <TableHead className="w-[50px]">
-                <Checkbox
+                {/* <Checkbox
                   checked={
                     selectedIds.length === paginatedTransactions.length &&
                     paginatedTransactions.length > 0
                   }
                   onCheckedChange={handleSelectAll}
-                />
+                /> */}
               </TableHead>
               <TableHead
                 className="cursor-pointer"
@@ -350,10 +350,10 @@ export function TransactionTable({ transactions }) {
               paginatedTransactions.map((transaction) => (
                 <TableRow key={transaction.id}>
                   <TableCell>
-                    <Checkbox
+                    {/* <Checkbox
                       checked={selectedIds.includes(transaction.id)}
                       onCheckedChange={() => handleSelect(transaction.id)}
-                    />
+                    /> */}
                   </TableCell>
                   <TableCell>
                     {format(new Date(transaction.date), "PP")}
